@@ -1,10 +1,14 @@
 package stepDefinition;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -29,6 +33,10 @@ public class Hooks extends BaseClass {
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://login.salesforce.com");
+		wait = new WebDriverWait(driver, 30);
+		allWindows = new ArrayList<String>();
+		ac = new Actions(driver);
+		executor = (JavascriptExecutor) driver;
 	}
 
 	@After
