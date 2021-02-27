@@ -32,7 +32,6 @@ public class Hooks extends BaseClass {
 				"/Users/palanimohan/Documents/Career/qualityEngineer/Softwares/drivers/chromedriver");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.get("https://login.salesforce.com");
 		wait = new WebDriverWait(driver, 30);
 		allWindows = new ArrayList<String>();
 		ac = new Actions(driver);

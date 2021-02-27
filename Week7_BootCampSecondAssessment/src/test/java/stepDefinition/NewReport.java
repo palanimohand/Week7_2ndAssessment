@@ -128,6 +128,10 @@ public class NewReport extends BaseClass {
 	public NewReport get_the_List_of_Billing_State_Province() {
 		List<WebElement> company = driver.findElements(
 				By.xpath("//td[contains(@class,'x-grid3-col') and contains(@class,'x-grid3-td-COMPANY')]"));
+		for (WebElement webElement : company) {
+			String companyName = webElement.getText();
+			System.out.println(companyName);
+		}
 		return this;
 	}
 
@@ -137,6 +141,7 @@ public class NewReport extends BaseClass {
 				.findElement(
 						By.xpath("//div[@id='gridViewScrollpreviewPanelGrid']//b[contains(text(),'Grand Totals')]"))
 				.getText();
+		System.out.println(totalrecords);
 		return this;
 	}
 
